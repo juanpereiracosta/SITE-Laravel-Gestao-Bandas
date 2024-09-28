@@ -1,3 +1,6 @@
+@extends('layouts.main')
+
 @section('content')
-    <h1>Teste</h1>
+    <h1>Test</h1>
 @endsection
+

@@ -8,6 +8,6 @@ class HomeController extends Controller
 {
     public function index(): \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application
     {
-        return view('home');
+        return view('layouts.home');
     }
 }

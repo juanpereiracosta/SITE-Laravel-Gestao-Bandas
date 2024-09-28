@@ -25,7 +25,7 @@
 </nav>
 
 <!-- Conteúdo da página -->
-@yield('content')
+<?php echo $__env->yieldContent('content'); ?>
 
 <!-- footer do Bootstrap -->
 <div class="container">
@@ -51,3 +51,4 @@
 </html>
 
 
+<?php /**PATH C:\Users\Juan\Documents\cesae-software-developer\SITE-Laravel-Gestao-Bandas\final-project\resources\views/layouts/main.blade.php ENDPATH**/ ?>
