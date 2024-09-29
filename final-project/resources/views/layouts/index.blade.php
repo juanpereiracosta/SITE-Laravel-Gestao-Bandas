@@ -9,7 +9,7 @@
                 <tr>
                     <th style="font-size: 1.5rem; background-color: white;">Name</th>
                     <th style="font-size: 1.5rem; background-color: white;">Photo</th>
-                    <th style="font-size: 1.5rem; background-color: white;">Records</th>
+                    <th style="font-size: 1.5rem; background-color: white;">Albums</th> <!-- Renomeado para 'Albums' -->
                     <th style="font-size: 1.5rem; background-color: white;">Ações</th>
                 </tr>
             </thead>
@@ -18,11 +18,11 @@
                     <tr>
                         <td>{{ $band->name }}</td>
                         <td>
-                            <img src={{ asset($band->photo) }} alt="{{ $band->name }}" style="width: 100px;">
+                            <img src="{{ asset($band->photo) }}" alt="{{ $band->name }}" style="width: 100px;">
                         </td>
-                        <td>{{$band->albums}}</td>
+                        <td>{{ $band->albums_count }}</td> <!-- Exibe a contagem de álbuns -->
                         <td>
-                            <a href="#">Records</a>
+                            <a href="{{ route('bands.albums', $band->id) }}">Ver Álbuns</a> <!-- Link para ver os álbuns da banda -->
                         </td>
                     </tr>
                 @endforeach
@@ -31,3 +31,4 @@
     </div>
 </div>
 @endsection
+

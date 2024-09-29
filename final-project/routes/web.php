@@ -15,6 +15,10 @@ Route::get('/home', [HomeController::class, 'home'])->name('home');
 
 Route::get('/index', [BandsController::class, 'index'])->name('index');
 
+Route::get('/bands/create', [BandsController::class, 'create'])->name('create');
+
+Route::post('/bands', [BandsController::class, 'store'])->name('bands.store');
+
 
 
 
