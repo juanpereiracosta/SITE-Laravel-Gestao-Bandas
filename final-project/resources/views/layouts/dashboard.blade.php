@@ -1,4 +1,4 @@
-@extends('layouts.main')
+{{-- @extends('layouts.main')
 
 @section('content')
     <h1>Olá, {{ $name }}</h1>
@@ -7,4 +7,4 @@
     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
         @csrf
     </form>
-@endsection
+@endsection --}}

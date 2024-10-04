@@ -12,14 +12,14 @@
                 </tr>
             </thead>
             <tbody>
-                {{-- @foreach($albums as $album)
+                @foreach($albums as $album)
                     <tr>
                         <td>{{ $album->album_name }}</td>
                         <td>
                             <a href="#">Ver detalhes</a>
                         </td>
                     </tr>
-                @endforeach --}}
+                @endforeach
             </tbody>
         </table>
     </div>
