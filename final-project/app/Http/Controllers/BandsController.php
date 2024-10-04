@@ -22,31 +22,27 @@ class BandsController extends Controller
         'album_name' => 'required|string|max:255',
     ]);
 
-    // Criar uma nova banda
     $band = new Band();
     $band->name = $validatedData['name'];
 
-    // Upload da foto
     if ($request->hasFile('photo')) {
         $path = $request->file('photo')->store('photos', 'public');
         $band->photo = $path;
     }
 
-    // Salvar a banda
+
     $band->save();
 
-    // Criar o álbum associado à banda
     if ($validatedData['album_name']) {
         $album = new Album();
         $album->album_name = $validatedData['album_name'];
         $album->band_id = $band->id;
         $album->save();
 
-        // Incrementar o número de álbuns da banda
-        $band->increment('albums'); // Incrementa o valor da coluna 'albums'
+
+        $band->increment('albums');
     }
 
-    // Redirecionar com mensagem de sucesso
     return redirect()->route('home')->with('success', 'Banda e álbum adicionados com sucesso!');
 }
 
@@ -55,6 +51,7 @@ class BandsController extends Controller
     public function create() {
         return view('layouts.create');
     }
+    
 
     public function show($id) {
 
