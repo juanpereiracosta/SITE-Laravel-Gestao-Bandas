@@ -11,8 +11,8 @@ class Band extends Model
 
     protected $fillable = [
         'name',
-        'albums',
-        'photo', 
+        'album_count',
+        'photo',
     ];
 
     public function albums() {

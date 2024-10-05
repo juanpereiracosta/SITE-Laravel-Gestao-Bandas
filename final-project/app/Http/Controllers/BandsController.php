@@ -15,7 +15,6 @@ class BandsController extends Controller
 
     public function store(Request $request)
 {
-    // Validação dos dados
     $validatedData = $request->validate([
         'name' => 'required|string|max:255',
         'photo' => 'nullable|image',
@@ -30,7 +29,6 @@ class BandsController extends Controller
         $band->photo = $path;
     }
 
-
     $band->save();
 
     if ($validatedData['album_name']) {
@@ -38,9 +36,6 @@ class BandsController extends Controller
         $album->album_name = $validatedData['album_name'];
         $album->band_id = $band->id;
         $album->save();
-
-
-        $band->increment('albums');
     }
 
     return redirect()->route('home')->with('success', 'Banda e álbum adicionados com sucesso!');
@@ -48,10 +43,11 @@ class BandsController extends Controller
 
 
 
+
     public function create() {
         return view('layouts.create');
     }
-    
+
 
     public function show($id) {
 
