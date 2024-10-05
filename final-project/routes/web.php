@@ -23,7 +23,7 @@ Route::get('/bands/{band}/albums', [AlbumsController::class, 'indexAlbums'])->na
 
 Route::get('/bands/{id}', [BandsController::class, 'show'])->name('bands.show');
 
-//Route::get('/albums', [AlbumsController::class, 'albums'])->name('albums');
+Route::delete('/bands/{id}', [BandsController::class, 'destroy'])->name('bands.destroy');
 
 Route::get('/dashboard', function () {
     return view('layouts.home');

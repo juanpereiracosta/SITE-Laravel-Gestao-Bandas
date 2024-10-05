@@ -17,18 +17,22 @@
         <form action="{{ route('bands.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="form-group">
-                <label for="name">Nome da Banda:</label>
+                <label for="name">Band name:</label>
                 <input type="text" name="name" id="name" class="form-control" required>
             </div>
-            <div style="padding-top: 1rem" class="form-group">
-                <label for="photo">Foto da Banda:</label>
+            <div  class="form-group">
+                <label for="photo">Band photo:</label>
                 <input type="file" name="photo" id="photo" class="form-control" accept="image/*">
             </div>
             <div style="padding-top: 1rem" class="form-group">
-                <label for="album_name">Nome do Álbum:</label>
+                <label for="album_name">Album name:</label>
                 <input type="text" name="album_name" id="album_name" class="form-control" placeholder="Digite o nome do álbum" required>
             </div>
-            <button type="submit" class="btn btn-primary">Add band</button>
+            <div style="padding-top: 1rem" class="form-group">
+                <label for="album_photo">Album photo:</label>
+                <input type="file" name="album_photo" id="album_photo" class="form-control" accept="image/*">
+            </div>
+            <button style="margin-top: 1rem" type="submit" class="btn btn-primary">Add band</button>
         </form>
     </div>
 </div>

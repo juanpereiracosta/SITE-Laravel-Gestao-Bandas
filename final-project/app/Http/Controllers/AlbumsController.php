@@ -28,6 +28,7 @@ class AlbumsController extends Controller
 
         $validatedData = $request->validate([
             'album_name' => 'required|string|max:255',
+            'album_photo' => 'nullable|image'
         ]);
 
 

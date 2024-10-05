@@ -19,6 +19,7 @@ class BandsController extends Controller
         'name' => 'required|string|max:255',
         'photo' => 'nullable|image',
         'album_name' => 'required|string|max:255',
+        'album_photo' => 'nullable|image', // Adicione esta linha para validar a imagem do álbum
     ]);
 
     $band = new Band();
@@ -35,12 +36,17 @@ class BandsController extends Controller
         $album = new Album();
         $album->album_name = $validatedData['album_name'];
         $album->band_id = $band->id;
+
+        if ($request->hasFile('album_photo')) {
+            $albumPath = $request->file('album_photo')->store('album_photos', 'public');
+            $album->album_photo = $albumPath; 
+        }
+
         $album->save();
     }
 
     return redirect()->route('home')->with('success', 'Banda e álbum adicionados com sucesso!');
 }
-
 
 
 
@@ -61,4 +67,13 @@ class BandsController extends Controller
 
         return view('layouts.show', compact('band', 'albums'));
     }
+
+    public function destroy($id)
+{
+    $band = Band::findOrFail($id);
+    $band->delete();
+
+    return redirect()->route('index')->with('success', 'Banda excluída com sucesso!');
+}
+
 }
