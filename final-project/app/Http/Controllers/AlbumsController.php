@@ -18,7 +18,6 @@ class AlbumsController extends Controller
 
         $band = Band::findOrFail($bandId);
 
-
         $albums = $band->albums;
 
         return view('layouts.show', compact('band', 'albums'));

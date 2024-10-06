@@ -19,7 +19,7 @@ class BandsController extends Controller
         'name' => 'required|string|max:255',
         'photo' => 'nullable|image',
         'album_name' => 'required|string|max:255',
-        'album_photo' => 'nullable|image', // Adicione esta linha para validar a imagem do álbum
+        'album_photo' => 'nullable|image', 
     ]);
 
     $band = new Band();
@@ -39,7 +39,7 @@ class BandsController extends Controller
 
         if ($request->hasFile('album_photo')) {
             $albumPath = $request->file('album_photo')->store('album_photos', 'public');
-            $album->album_photo = $albumPath; 
+            $album->album_photo = $albumPath;
         }
 
         $album->save();

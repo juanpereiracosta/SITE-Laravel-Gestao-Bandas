@@ -3,9 +3,6 @@
     <div style="width: 600px;">
         <h2 style="text-align: center;">Álbuns de <?php echo e($band->name); ?></h2>
         <table class="table" style="border: none; width: 100%; text-align: center;">
-            <thead>
-                
-            </thead>
             <tbody>
                 <?php $__currentLoopData = $albums; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $album): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                     <tr>
@@ -14,9 +11,6 @@
                             <?php if($album->album_photo): ?>
                                 <img src="<?php echo e(asset('storage/' . $album->album_photo)); ?>" style="width: 120px" alt="<?php echo e($album->album_name); ?>">
                             <?php endif; ?>
-                        </td>
-                        <td>
-                            <a href="#">Ver detalhes</a>
                         </td>
                     </tr>
                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>

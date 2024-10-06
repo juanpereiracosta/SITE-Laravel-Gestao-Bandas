@@ -5,13 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cosmic</title>
 
-    <!-- CSS do bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body style="display: flex; flex-direction: column; min-height: 100vh;">
 
-    <!-- header -->
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Reem+Kufi+Fun:wght@400..700&display=swap');
 
@@ -34,16 +32,21 @@
             margin: 5px 0;
             color: white;
         }
+
+        body {
+            color:black;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+        }
+
     </style>
     <header class="header">
         <h1>Cosmic</h1>
         <p>Music is everywhere</p>
     </header>
 
-    <!-- Conteúdo da blade -->
     <div style="flex: 1;"> @yield('content') </div>
 
-    <!-- footer -->
     <style>
         .footer {
             background-color: black;
@@ -59,9 +62,6 @@
         </a>
         <div>&copy; 2024 Juan Costa</div>
     </footer>
-
-    <!-- javascript do Bootstrap -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
 

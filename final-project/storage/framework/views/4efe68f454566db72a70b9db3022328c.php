@@ -1,11 +1,7 @@
 <?php $__env->startSection('content'); ?>
     <div style="display: flex; justify-content: center; margin-top: 20px;">
         <div style="width: 600px;">
-
             <table class="table" style="border: none; width: 100%; text-align: center;">
-                <thead>
-                    
-                </thead>
                 <tbody>
                     <?php $__currentLoopData = $bands; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $band): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <tr>
@@ -16,9 +12,9 @@
                                         alt="<?php echo e($band->name); ?>">
                                 <?php endif; ?>
                             </td>
-                            <td><?php echo e($band->albums_count); ?> albums</td>
+                            <td><?php echo e($band->albums_count); ?> album</td>
                             <td>
-                                <a href="<?php echo e(route('bands.albums', $band->id)); ?>">See albums</a>
+                                <a href="<?php echo e(route('bands.albums', $band->id)); ?>" style="text-decoration: none; color:black">See album</a>
                             </td>
                             <td>
                                 <form action="<?php echo e(route('bands.destroy', $band->id)); ?>" method="POST">

@@ -16,7 +16,7 @@ class AddDefaultValueToAlbumsInBandsTable extends Migration
     public function down()
     {
         Schema::table('bands', function (Blueprint $table) {
-            $table->integer('albums')->default(null)->change(); // ou remova o default
+            $table->integer('albums')->default(null)->change();
         });
     }
 };
