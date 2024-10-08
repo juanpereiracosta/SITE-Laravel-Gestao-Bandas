@@ -9,9 +9,17 @@ class Band extends Model
 {
     use HasFactory;
 
-    public function albums()
-{
-    return $this->hasMany(Album::class);
+    protected $fillable = [
+        'name',
+        'album_count',
+        'photo',
+    ];
+
+    public function albums() {
+        return $this->hasMany(Album::class);
+    }
 }
 
-}
+
+
+

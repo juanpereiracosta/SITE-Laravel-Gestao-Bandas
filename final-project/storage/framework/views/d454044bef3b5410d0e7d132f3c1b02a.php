@@ -2,28 +2,38 @@
 <div style="display: flex; justify-content: center; margin-top: 50px; margin-bottom: 50px;">
     <div style="width: 800px; padding: 40px; border: 1px solid #ccc; border-radius: 8px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);">
         <h1 style="text-align: center; font-size: 3rem; font-weight: bold; margin-bottom: 40px;">Add Band</h1>
+        <?php if($errors->any()): ?>
+            <div class="alert alert-danger">
+                <ul>
+                    <?php $__currentLoopData = $errors->all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $error): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                        <li><?php echo e($error); ?></li>
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                </ul>
+            </div>
+        <?php endif; ?>
+
         <form action="<?php echo e(route('bands.store')); ?>" method="POST" enctype="multipart/form-data">
             <?php echo csrf_field(); ?>
-            <div class="form-group" style="margin-bottom: 30px;">
-                <label for="name" style="font-weight: bold; font-size: 1.5rem;">Band Name</label>
-                <input type="text" name="name" class="form-control" placeholder="Enter band name" required style="width: 100%; font-size: 1.2rem;">
+            <div class="form-group">
+                <label for="name">Band name:</label>
+                <input type="text" name="name" id="name" class="form-control" required>
             </div>
-            <div class="form-group" style="margin-bottom: 30px;">
-                <label for="photo" style="font-weight: bold; font-size: 1.5rem;">Photo</label>
-                <input type="file" name="photo" class="form-control" required style="width: 100%; font-size: 1.2rem;">
+            <div  class="form-group">
+                <label for="photo">Band photo:</label>
+                <input type="file" name="photo" id="photo" class="form-control" accept="image/*">
             </div>
-            <button type="submit" class="btn" style="margin-top: 20px; background-color: black; color: white; font-size: 1rem; padding: 10px 20px;">Add Band</button>
+            <div style="padding-top: 1rem" class="form-group">
+                <label for="album_name">Album name:</label>
+                <input type="text" name="album_name" id="album_name" class="form-control" placeholder="Digite o nome do álbum" required>
+            </div>
+            <div style="padding-top: 1rem" class="form-group">
+                <label for="album_photo">Album photo:</label>
+                <input type="file" name="album_photo" id="album_photo" class="form-control" accept="image/*">
+            </div>
+            <button style="margin-top: 1rem" type="submit" class="btn btn-primary">Add band</button>
         </form>
     </div>
 </div>
 <?php $__env->stopSection(); ?>
-
-
-
-
-
-
-
-
 
 <?php echo $__env->make('layouts.main', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\Juan\Documents\cesae-software-developer\SITE-Laravel-Gestao-Bandas\final-project\resources\views/layouts/create.blade.php ENDPATH**/ ?>
